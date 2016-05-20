@@ -18,6 +18,9 @@ if(!isset($_SESSION['username']))
 		}
 	}
 	else
+	
+	
+	hello
 	{
 		$controller = 'signin';
 		$filename = 'controller'.$controller.'.php';
