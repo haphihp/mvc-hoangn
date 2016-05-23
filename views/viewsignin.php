@@ -32,6 +32,6 @@ foreach($showerror as $value) {
 	</tr>
 </form>
 </table>
-<p>Nếu chưa có tai khoản,Đăng ký tại đây<a href='http://localhost/abc/index.php?h=signup'>ĐĂNG KÝ</a></p>
+<p>Nếu chưa có tai khoản,Đăng ký tại đây<a href='index.php?h=user&action=signup'>ĐĂNG KÝ</a></p>
 </body>
 </html>

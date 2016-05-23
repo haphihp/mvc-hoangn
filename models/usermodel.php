@@ -1,9 +1,14 @@
 <?php 
 require_once PATH.'/models/connect.php';
-class signupmodel extends connect
+class userMD extends connect
 {
-	
-	public function setsignup($username,$password,$email)
+	function getInfologin($username)
+	{
+		$select = "SELECT * FROM user WHERE username = '$username'";
+		$result = mysqli_query( $this->con,$select);
+		return mysqli_fetch_assoc($result);
+	}
+	function setsignup($username,$password,$email)
 	{
 		$sql = "SELECT * FROM user WHERE username='$username'";
 		$query = mysqli_query($this->con,$sql);
@@ -28,5 +33,6 @@ class signupmodel extends connect
 	}
 }
 
- ?>
-		
+
+
+

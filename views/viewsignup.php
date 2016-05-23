@@ -41,6 +41,6 @@ foreach($showerror as $value) {
 	</tr>
 </form>
 </table>
-<p>Neu bạn đã đăng ký rồi. Đăng nhập ở đây<a href='http://localhost/abc/index.php?h=signin'>ĐĂNG NHẬP</a></p>
+<p>Neu bạn đã đăng ký rồi. Đăng nhập ở đây<a href='index.php?h=user&action=signin'>ĐĂNG NHẬP</a></p>
 </body>
 </html>
