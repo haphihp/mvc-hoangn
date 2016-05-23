@@ -6,12 +6,12 @@ function addca()//Thêm loại tin tức
 	if(isset($_POST['ok']))
 	{
 		$catergory = $_POST['catergory'];
-		require_once PATH.'/models/modeltintuc.php';
+		require_once PATH.'/models/tintucmodel.php';
 		$result = new tintucMd;
 		$result -> addca($catergory);
 		if(isset($result))
 		{
-			$message = "Them thanh cong";
+			$message = "Them thanh cong!";
 		}
 		else
 		{
@@ -23,7 +23,7 @@ function addca()//Thêm loại tin tức
 
 function addtintuc() //Thêm tin tức
 {
-	require_once PATH.'/models/modeltintuc.php';
+	require_once PATH.'/models/tintucmodel.php';
 	$result = new tintucMd;
 	if(isset($_POST['oki']))
 	{	
@@ -33,7 +33,7 @@ function addtintuc() //Thêm tin tức
 		$result -> addtintuc($title,$content,$categoryid);
 		if(isset($result))
 		{
-			$message = "Thêm thành công<a href='http://localhost/abc/index.php?h=tintuc'>Trang Tin</a>";
+			$message = "Thêm thành công<a href='index.php?h=tintuc'>Trang Tin</a>";
 			//echo $result;
 		}
 		else
@@ -47,7 +47,7 @@ function addtintuc() //Thêm tin tức
 }
 function allnews()//Tất cả các loại tin tức
  {
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$result = new tintucMd;
  	$data = $result->alltintuc();
  	require_once PATH.'/views/viewalltintuc.php';
@@ -55,7 +55,7 @@ function allnews()//Tất cả các loại tin tức
 
  function edittintuc()// Sửa loại tin tức
  {
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$id = $_GET['id'];
  	$result = new tintucMd;
 
@@ -75,7 +75,7 @@ function allnews()//Tất cả các loại tin tức
 
 function deletetintuc()//Xóa loại tin tức
  {	
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$id = $_GET['id'];
  	$result = new tintucMd;
  	$result->xoatintuc($id);
@@ -83,7 +83,7 @@ function deletetintuc()//Xóa loại tin tức
  } 
  function allcategory()//Tất cả các loại tin tức
  {
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$result = new tintucMd;
  	$data = $result->allca();
  	require_once PATH.'/views/viewallca.php';
@@ -91,7 +91,7 @@ function deletetintuc()//Xóa loại tin tức
 
  function editcategory()//Sưa loại tin tức
  {
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$cateid = $_GET['id'];
  	$result = new tintucMd;
  	if(isset($_POST['ok']))
@@ -105,7 +105,7 @@ function deletetintuc()//Xóa loại tin tức
  }
   function deletecategory()// Xóa loại tin tức
  {	
- 	require_once PATH.'/models/modeltintuc.php';
+ 	require_once PATH.'/models/tintucmodel.php';
  	$cateid = $_GET['id'];
  	$result = new tintucMd;
  	//$result->alltintuc();
@@ -119,9 +119,9 @@ function destroy() //Đăng xuất người dùng
 	if(isset($_SESSION['username']))
 	{
 	session_destroy();
-	header('location:http://localhost/abc/index.php');
+	header('location:index.php?h=user&action=signin');
 	}
-	require_once PATH.'/views/vieweditcategory.php';
+	//require_once PATH.'/views/vieweditcategory.php';
 	}
 }
  

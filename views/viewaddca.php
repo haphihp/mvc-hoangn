@@ -22,4 +22,4 @@
 </table
 </body>
 </html>
-<a href ="http://localhost/abc/index.php">Trang tin tức</a>
+<a href ="index.php">Trang tin tức</a>

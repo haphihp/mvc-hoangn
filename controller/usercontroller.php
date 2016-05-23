@@ -1,6 +1,6 @@
 <?php 
-class signup
-{	
+class user 
+{
 	function signup()
 	{
 	if(isset($_POST['ok']))
@@ -40,8 +40,8 @@ class signup
 		}
 		if(!isset($error))
 		{
-			require_once PATH.'/models/signupmodel.php';
-			$signupmodel = new signupmodel;
+			require_once PATH.'/models/usermodel.php';
+			$signupmodel = new userMD;
 			$result= $signupmodel->setsignup($username,$password,$email);
 			if($result)
 			{
@@ -59,11 +59,8 @@ class signup
 			print_r($showerror);
 		}
 	}
-	require_once PATH.'/views/viewsignup.php';
-}
-}
-Class signin
-{
+		require_once PATH.'/views/viewsignup.php';
+	}
 	function signin()
 	{
 		if (isset($_POST['oki']))
@@ -97,8 +94,8 @@ Class signin
 		}
 		if(!isset($error))
 		{
-			require_once PATH .'/models/signinmodel.php';
-			$model = new signinmodel;
+			require_once PATH.'/models/usermodel.php';
+			$model = new userMD;
 			$result = $model->getInfologin($username);
 			if ($username == $result['username'] && $password==$result['password'])
 			{	
@@ -118,16 +115,16 @@ Class signin
 	}
 		require_once PATH . '/views/viewsignin.php';
 	}
-}
-class logout
-{
-	function logout()
+	function destroy() //Đăng xuất người dùng
 	{
-		if(isset($_SESSION['username']))
-		{
-		session_destroy();
-		header('location:http://localhost/abc/index.php?login');
-		}
+	if(isset($_SESSION['username']))
+	{
+	session_destroy();
+	header('location:index.php?h=user&action=signin');
+	}
+	//require_once PATH.'/views/vieweditcategory.php';
 	}
 }
- 
+
+
+
