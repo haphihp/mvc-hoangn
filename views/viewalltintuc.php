@@ -5,34 +5,43 @@
 	<meta charset="utf-8">
 </head>
 <body>
-<table border="1px" width="1200">
-<tr width="1150">
-	<td width="50">ID</td>
-	<td width="150">CATERGORY</td>
-	<td width="300">TITLE</td>
-	<td width="500">CONTENT</td>
-	<td width="50">SỬA</td>
-	<td width="50">XÓA</td>
-</tr>
+    <div class="example">
+    <div class="container">
+            <div class="row">
+                <h2>Trang Tin</h2>
+                <table class="table table-hover">
+                        <tr>
+                            <td>ID</td>
+                            <td>Category</td>
+                            <td>Title</td>
+                            <td>Content</td>
+                            <td>Sửa</td>
+                            <td>Xóa</td>
+                     </tr>
 <?php foreach ($data as $value): ?>
 	<tr>
-		<td width="50"><?php echo $value['id'];?></td>
-		<td width="150"><?php echo $value['catename'];?></td>
-		<td width="300"><?php echo $value['title'];?></td>
-		<td width="500"><?php echo $value['content'];?></td>
-		<td width="50"><a href="index.php?h=tintuc&action=edittintuc&id=<?php echo $value['id']?>">SỬA</a></td>
-		<td width="50"><a href="index.php?h=tintuc&action=deletetintuc&id=<?php echo $value['id']?>">XÓA</a></td>
+		<td ><?php echo $value['id'];?></td>
+		<td ><?php echo $value['catename'];?></td>
+		<td ><?php echo $value['title'];?></td>
+		<td ><?php echo $value['content'];?></td>
+		<td ><a href="index.php?h=tintuc&action=edittintuc&id=<?php echo $value['id']?>">SỬA</a></td>
+		<td ><a href="index.php?h=tintuc&action=deletetintuc&id=<?php echo $value['id']?>">XÓA</a></td>
 	<tr>
 <?php endforeach ?>
-
 </table>
-</body>
-</html>
-<div><a href="index.php?h=tintuc&action=addtintuc">Thêm tin tức</a></div>
-<div><a href="index.php?h=tintuc&action=addca">Thêm Category</a></div>
-<div><a href="index.php?h=tintuc&action=allcategory">Category</a></div>
-<div><a href="index.php?h=tintuc&action=destroy">ĐĂNG XUẤT</a></div>
-
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="rol-sm-3">
+<a href="index.php?h=tintuc&action=addtintuc" class="btn btn-primary btn-xs">Thêm tin tức</a>
+<a href="index.php?h=tintuc&action=addca" class="btn btn-info btn-xs" >Thêm Category</a>
+<a href="index.php?h=tintuc&action=allcategory" class="btn btn-warning btn-xs">Category</a>
+<a href="index.php?h=user&action=destroy" class="btn btn-default btn-xs">ĐĂNG XUẤT</a>
+</div>
+</div>
+</div>
 
 
 
