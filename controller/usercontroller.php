@@ -21,7 +21,7 @@ class user
 		if($email =='')
 		{
 			$error = TRUE;
-			$showerror[]= "Bạn phải điền email";
+			$showerror= "Bạn phải điền email";
 		}
 		if(strlen($username)>20)
 		{
@@ -33,7 +33,7 @@ class user
 			$error = TRUE;
 			$showerror[] = "Password nhập quá dài";
 		}
-		if($username =='' && $password=='' && $email =='')
+		if($username =='' && $password =='' && $email =='')
 		{
 			$error = TRUE;
 			$showerror[] = "Bạn phải điền tên đăng nhập và mật khẩu, email";

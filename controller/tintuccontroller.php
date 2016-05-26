@@ -114,14 +114,6 @@ function deletetintuc()//Xóa loại tin tức
  	header('location:index.php?h=tintuc&action=allcategory');
  	//require_once PATH.'/views/viewallca.php';
  }
-function destroy() //Đăng xuất người dùng
-	{
-	if(isset($_SESSION['username']))
-	{
-	session_destroy();
-	header('location:index.php?h=user&action=signin');
-	}
-	//require_once PATH.'/views/vieweditcategory.php';
-	}
+
 }
  

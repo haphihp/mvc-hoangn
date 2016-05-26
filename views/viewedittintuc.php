@@ -9,7 +9,7 @@
 <table align="center" border="0.5" bgcolor="00EE00" width="600px" height="600px">
 <form action="" method="post">
 	<tr align="center">
-		<td colspan="2">Sua Tin Tức</td>
+		<td colspan="2">Sửa Tin Tức</td>
 	</tr>
 	<tr>
 	<td >TITLE</td>
@@ -28,9 +28,10 @@
 	<td><textarea name="content"><?php echo $data['content']?></textarea></td>
 	</tr>
 	<tr align="center">
-	<td colspan="2"><input type="submit" name="oki" value="Sua"></td>
+	<td colspan="2"><input type="submit" name="oki" value="Sửa"></td>
 	</tr>
 </form>
 </table>
 </body>
 </html>
+<a href="index.php?h=tintuc&action=allnews">Trang Tin Tức<a>
