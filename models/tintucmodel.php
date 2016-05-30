@@ -20,9 +20,16 @@ class tintucMd extends connect
 		$query = mysqli_query($this->con,$sql);
 		return mysqli_fetch_all($query,MYSQLI_ASSOC);
 	}
+
+	function getContentOnPage($limitStart)
+	{
+	$sql = "SELECT * FROM category as c JOIN  tintuc as t ON t.caid = c.cateid LIMIT $limitStart, 10";
+	$query = mysqli_query($this->con,$sql);
+	return mysqli_fetch_all($query,MYSQLI_ASSOC);	
+	}
 	function alltintuc()// lấy ra tất cả tin tức
 	{
-		$sql = "SELECT * FROM category as c JOIN  tintuc as t ON t.caid = c.cateid";
+		$sql = "SELECT * FROM category as c JOIN  tintuc as t ON t.caid = c.cateid ";
 		$query = mysqli_query($this->con,$sql);
 		return mysqli_fetch_all($query,MYSQLI_ASSOC);
 	}
@@ -51,8 +58,8 @@ class tintucMd extends connect
 	}
 	function editca($catename,$cateid)
 	{
-		$sql = "UPDATE category SET catename = '$catename' WHERE cateid='$cateid'";
-		$query = mysqli_query($this->con, $sql);
+		$sql = "UPDATE category SET catename = '$catename' WHERE cateid = '$cateid'";
+		$query = mysqli_query($this->con,$sql);
 		return mysqli_fetch_assoc($query);
 	}
 	function viewca($cateid)
