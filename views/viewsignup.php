@@ -1,25 +1,19 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ĐĂNG KÝ</title>
-	<meta charset="utf-8">;
-</head>
-<body>
 <?php 
-if(isset($message))
-{
- echo $message; 
-}
-?>
-<?php if(isset($showerror))
+if(isset($showerror))
 {
 foreach($showerror as $value) {
 	echo $value;
 }
 }
+elseif(isset($message))
+{
+ echo $message; 
+}
  ?>
-<table align="center" border="0.5" bgcolor="00EE00" width="400px">
+<div class="container">
+<div class="table-responsive"> 
+<table class="table" >
 <form action="" method="post">
 	<tr align="center">
 		<td colspan="2">Trang Đăng Ký</td>
@@ -41,6 +35,6 @@ foreach($showerror as $value) {
 	</tr>
 </form>
 </table>
-<p>Neu bạn đã đăng ký rồi. Đăng nhập ở đây<a href='http://localhost/abc/index.php?h=signin'>ĐĂNG NHẬP</a></p>
-</body>
-</html>
+</div>
+</div>
+<p>Neu bạn đã đăng ký rồi. Đăng nhập ở đây<a href='index.php?h=user&action=signin'>ĐĂNG NHẬP</a></p>
